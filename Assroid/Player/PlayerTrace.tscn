@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assroid/Player/PlayerTrace.gd" type="Script" id=1]
+
+[node name="PlayerTrace" type="CPUParticles2D"]
+position = Vector2( -6, 0 )
+amount = 16
+lifetime = 6.0
+lifetime_randomness = 1.0
+local_coords = false
+direction = Vector2( -1, 0 )
+gravity = Vector2( -1, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 1.0
+angular_velocity = 5.0
+radial_accel_random = 1.0
+angle = -90.0
+angle_random = 1.0
+color = Color( 1, 1, 0.364706, 1 )
+script = ExtResource( 1 )

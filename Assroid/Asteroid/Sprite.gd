@@ -1,8 +1,8 @@
 extends Sprite
 
-onready var full_asteroid = preload("res://Assroid/Asteroid/Asteroid_2.png")
-onready var half_asteroid = preload("res://Assroid/Asteroid/Asteroid_3.png")
-onready var feeble_asteroid = preload("res://Assroid/Asteroid/Asteroid_4.png")
+onready var full_asteroid = preload("res://Assroid/Asteroid/Asteroid_1.png")
+onready var half_asteroid = preload("res://Assroid/Asteroid/Asteroid_2.png")
+onready var feeble_asteroid = preload("res://Assroid/Asteroid/Asteroid_3.png")
 
 func _on_AsteroidHealth_asteroid_hit(health):
 	if health == 2:

@@ -13,7 +13,7 @@ const ROTATION_FRICTION = 1
 var rotation_velocity = 0
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("thrust"):
 		var max_velocity = Vector2.UP.rotated(rotation + PI / 2) * MAX_SPEED
 		velocity = velocity.move_toward(max_velocity, ACCELERATION)
 	else:

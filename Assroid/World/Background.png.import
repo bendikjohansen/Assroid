@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Projectile.png-d7fd8cc8c130132696980da6bf546bfb.stex"
+path="res://.import/Background.png-84fdbd84e924f5b4569ca8c5dbdfbf61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assroid/Projectile/Projectile.png"
-dest_files=[ "res://.import/Projectile.png-d7fd8cc8c130132696980da6bf546bfb.stex" ]
+source_file="res://Assroid/World/Background.png"
+dest_files=[ "res://.import/Background.png-84fdbd84e924f5b4569ca8c5dbdfbf61.stex" ]
 
 [params]
 

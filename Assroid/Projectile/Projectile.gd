@@ -7,6 +7,7 @@ var velocity = Vector2.ZERO
 var projectile_color = Color(1, 1, 1)
 
 func _ready():
+	add_to_group("projectiles")
 	rotation = direction.angle()
 	velocity = direction.normalized() * SPEED
 	get_node("Sprite").set_modulate(projectile_color)

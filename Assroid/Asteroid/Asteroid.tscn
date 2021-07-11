@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assroid/Asteroid/Asteroid_2.png" type="Texture" id=1]
 [ext_resource path="res://Assroid/Asteroid/Asteroid.gd" type="Script" id=2]
-[ext_resource path="res://Assroid/Asteroid/CollisionHandler.gd" type="Script" id=3]
+[ext_resource path="res://Assroid/Asteroid/ExplodeHandler.gd" type="Script" id=3]
+[ext_resource path="res://Assroid/Asteroid/AsteroidHealth.gd" type="Script" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -28,8 +29,11 @@ texture = ExtResource( 1 )
 rotation = 0.507891
 shape = SubResource( 2 )
 
-[node name="CollisionHandler" type="Node2D" parent="."]
+[node name="ExplodeHandler" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[connection signal="asteroid_explode" from="." to="CollisionHandler" method="_on_Asteroid_asteroid_explode"]
-[connection signal="body_entered" from="." to="." method="_on_Asteroid_body_entered"]
+[node name="AsteroidHealth" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[connection signal="body_entered" from="." to="AsteroidHealth" method="_on_Asteroid_body_entered"]
+[connection signal="asteroid_explode" from="AsteroidHealth" to="ExplodeHandler" method="_on_AsteroidHealth_asteroid_explode"]

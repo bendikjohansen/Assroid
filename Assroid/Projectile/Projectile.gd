@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 const SPEED = 400
 
@@ -10,6 +10,8 @@ func _ready():
 	rotation = direction.angle()
 	velocity = direction.normalized() * SPEED
 	get_node("Sprite").set_modulate(projectile_color)
+	
+	apply_impulse(Vector2.ZERO, velocity)
 
-func _physics_process(delta):
-	var collision = move_and_collide(velocity * delta)
+func _on_Projectile_body_entered(body):
+	queue_free()

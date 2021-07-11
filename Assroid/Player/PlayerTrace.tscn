@@ -4,6 +4,7 @@
 
 [node name="PlayerTrace" type="CPUParticles2D"]
 position = Vector2( -6, 0 )
+emitting = false
 amount = 16
 lifetime = 6.0
 lifetime_randomness = 1.0

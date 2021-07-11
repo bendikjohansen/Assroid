@@ -11,6 +11,7 @@ friction = 0.0
 radius = 15.0
 
 [node name="Asteroid" type="RigidBody2D"]
+mass = 128.29
 physics_material_override = SubResource( 1 )
 contacts_reported = 1
 contact_monitor = true

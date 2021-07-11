@@ -96,5 +96,5 @@ script = ExtResource( 4 )
 motion_mirroring = Vector2( 640, 360 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -0.0392685, -0.0392609 )
+position = Vector2( 0.567055, -0.0392609 )
 texture = ExtResource( 2 )

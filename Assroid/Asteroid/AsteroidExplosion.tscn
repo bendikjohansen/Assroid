@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Assroid/Asteroid/Asteroid_1.png" type="Texture" id=1]
+[ext_resource path="res://Assroid/Asteroid/Asteroid_2.png" type="Texture" id=1]
 
 [node name="AsteroidExplosion" type="CPUParticles2D"]
+scale = Vector2( 0.25, 0.25 )
 emitting = false
 one_shot = true
 speed_scale = 2.0

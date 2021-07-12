@@ -128,5 +128,5 @@ shape = SubResource( 2 )
 script = ExtResource( 11 )
 
 [connection signal="player_escaped" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_escaped"]
-[connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_sighted"]
 [connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_sighted"]
+[connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_sighted"]

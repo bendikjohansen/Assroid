@@ -91,6 +91,9 @@ script = ExtResource( 4 )
 position = Vector2( -20, 380 )
 script = ExtResource( 4 )
 
+[node name="Timer" type="Timer" parent="Spawners"]
+autostart = true
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -99,3 +102,12 @@ motion_mirroring = Vector2( 640, 360 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 0.271813, 0.144947 )
 texture = ExtResource( 2 )
+
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner8" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner5" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner6" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner7" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner4" method="_on_Timer_timeout"]

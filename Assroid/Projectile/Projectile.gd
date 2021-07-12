@@ -11,7 +11,10 @@ func _ready():
 	rotation = direction.angle()
 	velocity = direction.normalized() * SPEED
 	get_node("Sprite").set_modulate(projectile_color)
-	
+
+	for member in get_tree().get_nodes_in_group("health"):
+		connect("body_entered", member, "_on_Projectile_body_entered")
+
 	apply_impulse(Vector2.ZERO, velocity)
 
 func _on_Projectile_body_entered(body):

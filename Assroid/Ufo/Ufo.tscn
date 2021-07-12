@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assroid/Canon/Canon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assroid/Ufo/Ufo.png" type="Texture" id=2]
 [ext_resource path="res://Assroid/Canon/UfoCanon.gd" type="Script" id=3]
 [ext_resource path="res://Assroid/Ufo/UfoMovement.gd" type="Script" id=4]
 [ext_resource path="res://Assroid/Ufo/UfoSight.gd" type="Script" id=5]
+[ext_resource path="res://Assroid/Ufo/UfoHealth.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.0
@@ -31,8 +32,11 @@ shape = SubResource( 1 )
 [node name="UfoSight" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
 [connection signal="timeout" from="UfoCanon/Timer" to="UfoCanon" method="_on_Timer_timeout"]
-[connection signal="player_escaped" from="UfoSight" to="." method="_on_UfoSight_player_escaped"]
 [connection signal="player_escaped" from="UfoSight" to="UfoCanon" method="_on_UfoSight_player_escaped"]
-[connection signal="player_sighted" from="UfoSight" to="." method="_on_UfoSight_player_sighted"]
+[connection signal="player_escaped" from="UfoSight" to="." method="_on_UfoSight_player_escaped"]
 [connection signal="player_sighted" from="UfoSight" to="UfoCanon" method="_on_UfoSight_player_sighted"]
+[connection signal="player_sighted" from="UfoSight" to="." method="_on_UfoSight_player_sighted"]

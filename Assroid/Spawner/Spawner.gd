@@ -9,7 +9,8 @@ onready var Asteroid = preload("res://Assroid/Asteroid/Asteroid.tscn")
 onready var Ufo = preload("res://Assroid/Ufo/Ufo.tscn")
 
 func _process(delta):
-	position = initial_position + player.position
+	if player != null:
+		position = initial_position + player.position
 
 func _on_Timer_timeout():
 	var roll = randf()

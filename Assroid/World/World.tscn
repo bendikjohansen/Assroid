@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assroid/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Assroid/World/Background.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assroid/Player/PlayerTrace.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assroid/Canon/Canon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assroid/Canon/PlayerCanon.gd" type="Script" id=7]
+[ext_resource path="res://Assroid/Player/PlayerHealth.gd" type="Script" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -57,6 +58,9 @@ position = Vector2( -8, 3 )
 position = Vector2( 15, 0 )
 script = ExtResource( 7 )
 
+[node name="PlayerHealth" type="Node2D" parent="Player"]
+script = ExtResource( 8 )
+
 [node name="Spawners" type="Node2D" parent="."]
 
 [node name="Spawner1" type="Node2D" parent="Spawners"]
@@ -100,7 +104,7 @@ autostart = true
 motion_mirroring = Vector2( 640, 360 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0.271813, 0.144947 )
+position = Vector2( 0.493866, 0.367006 )
 texture = ExtResource( 2 )
 
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner8" method="_on_Timer_timeout"]

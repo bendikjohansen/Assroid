@@ -116,6 +116,9 @@ script = ExtResource( 9 )
 position = Vector2( 0, 25 )
 script = ExtResource( 10 )
 
+[node name="Timer" type="Timer" parent="Ufo/UfoCanon"]
+wait_time = 0.5
+
 [node name="Sprite" type="Sprite" parent="Ufo"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
@@ -127,6 +130,8 @@ shape = SubResource( 2 )
 [node name="UfoSight" type="Node2D" parent="Ufo"]
 script = ExtResource( 11 )
 
+[connection signal="timeout" from="Ufo/UfoCanon/Timer" to="Ufo/UfoCanon" method="_on_Timer_timeout"]
 [connection signal="player_escaped" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_escaped"]
+[connection signal="player_escaped" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_escaped"]
 [connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_sighted"]
 [connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_sighted"]

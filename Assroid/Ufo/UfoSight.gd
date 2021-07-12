@@ -1,7 +1,7 @@
 extends Node2D
 
 const FIELD_OF_VIEW = 350
-onready var player = get_node("/root/WorldEnvironment/Player")
+onready var player = get_node("/root/Game/WorldEnvironment/Player")
 var is_within_sight = false
 
 signal player_sighted(player_position, distance_to_player)

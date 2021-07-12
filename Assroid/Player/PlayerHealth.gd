@@ -3,6 +3,8 @@ extends Node2D
 onready var player = get_parent()
 var health = 3
 
+signal player_died
+
 func _ready():
 	add_to_group("health")
 
@@ -18,4 +20,5 @@ func lose_health(points):
 	health -= points
 	
 	if health <= 0:
+		emit_signal("player_died")
 		player.queue_free()

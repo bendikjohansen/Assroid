@@ -16,7 +16,7 @@ func _on_Timer_timeout():
 	if roll < UFO_SPAWN_CHANCE:
 		spawn_entity(Ufo)
 	elif roll < ASTEROID_SPAWN_CHANCE:
-		spawn_entity(Asteroid)	
+		spawn_entity(Asteroid)
 
 func spawn_entity(Entity):
 	var entity = Entity.instance()

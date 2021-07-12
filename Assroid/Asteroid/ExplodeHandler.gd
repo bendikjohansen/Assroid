@@ -7,7 +7,9 @@ func _on_AsteroidHealth_asteroid_explode(body):
 	if body.is_in_group("asteroids"):
 		should_explode = get_parent().get_instance_id() < body.get_instance_id()
 	else:
-		should_explode = body.name == "Player" or body.is_in_group("projectiles")
+		should_explode = (body.name == "Player" 
+		or body.is_in_group("projectiles")
+		or body.is_in_group("ufos"))
 	
 	if should_explode:
 		var explosion = AsteroidExplosion.instance()

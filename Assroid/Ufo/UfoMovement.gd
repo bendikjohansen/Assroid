@@ -8,6 +8,9 @@ var is_chasing = false
 
 var velocity = Vector2.ZERO
 
+func _ready():
+	add_to_group("ufos")
+
 func _physics_process(_delta):
 	if not is_chasing:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)

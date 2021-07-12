@@ -11,6 +11,8 @@ func _on_Asteroid_body_entered(body):
 		health_loss = 2
 	if body.is_in_group("projectiles"):
 		health_loss = 1
+	if body.is_in_group("ufos"):
+		health_loss = 3
 	
 	health -= health_loss
 	

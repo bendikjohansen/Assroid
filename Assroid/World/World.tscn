@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assroid/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Assroid/World/Background.png" type="Texture" id=2]
@@ -7,10 +7,6 @@
 [ext_resource path="res://Assroid/Player/PlayerTrace.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assroid/Canon/Canon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assroid/Canon/PlayerCanon.gd" type="Script" id=7]
-[ext_resource path="res://Assroid/Ufo/Ufo.png" type="Texture" id=8]
-[ext_resource path="res://Assroid/Ufo/UfoMovement.gd" type="Script" id=9]
-[ext_resource path="res://Assroid/Canon/UfoCanon.gd" type="Script" id=10]
-[ext_resource path="res://Assroid/Ufo/UfoSight.gd" type="Script" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -23,9 +19,6 @@ glow_blend_mode = 0
 glow_hdr_luminance_cap = 5.0
 glow_hdr_scale = 1.0
 glow_bicubic_upscale = true
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource( 1 )
@@ -104,34 +97,5 @@ script = ExtResource( 4 )
 motion_mirroring = Vector2( 640, 360 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0.382851, 0.144947 )
+position = Vector2( 0.271813, 0.144947 )
 texture = ExtResource( 2 )
-
-[node name="Ufo" type="KinematicBody2D" parent="."]
-position = Vector2( 3.30572, -1.78321 )
-rotation = -0.00030574
-script = ExtResource( 9 )
-
-[node name="UfoCanon" parent="Ufo" instance=ExtResource( 6 )]
-position = Vector2( 0, 25 )
-script = ExtResource( 10 )
-
-[node name="Timer" type="Timer" parent="Ufo/UfoCanon"]
-wait_time = 0.5
-
-[node name="Sprite" type="Sprite" parent="Ufo"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ufo"]
-position = Vector2( 0, 3 )
-shape = SubResource( 2 )
-
-[node name="UfoSight" type="Node2D" parent="Ufo"]
-script = ExtResource( 11 )
-
-[connection signal="timeout" from="Ufo/UfoCanon/Timer" to="Ufo/UfoCanon" method="_on_Timer_timeout"]
-[connection signal="player_escaped" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_escaped"]
-[connection signal="player_escaped" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_escaped"]
-[connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo" method="_on_UfoSight_player_sighted"]
-[connection signal="player_sighted" from="Ufo/UfoSight" to="Ufo/UfoCanon" method="_on_UfoSight_player_sighted"]

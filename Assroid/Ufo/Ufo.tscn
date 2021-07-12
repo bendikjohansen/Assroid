@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assroid/Canon/Canon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assroid/Ufo/Ufo.png" type="Texture" id=2]
+[ext_resource path="res://Assroid/Canon/UfoCanon.gd" type="Script" id=3]
+[ext_resource path="res://Assroid/Ufo/UfoMovement.gd" type="Script" id=4]
+[ext_resource path="res://Assroid/Ufo/UfoSight.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.0
+
+[node name="Ufo" type="KinematicBody2D"]
+rotation = -0.00030574
+script = ExtResource( 4 )
+
+[node name="UfoCanon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 25 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="UfoCanon"]
+wait_time = 0.5
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 1 )
+
+[node name="UfoSight" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[connection signal="timeout" from="UfoCanon/Timer" to="UfoCanon" method="_on_Timer_timeout"]
+[connection signal="player_escaped" from="UfoSight" to="." method="_on_UfoSight_player_escaped"]
+[connection signal="player_escaped" from="UfoSight" to="UfoCanon" method="_on_UfoSight_player_escaped"]
+[connection signal="player_sighted" from="UfoSight" to="." method="_on_UfoSight_player_sighted"]
+[connection signal="player_sighted" from="UfoSight" to="UfoCanon" method="_on_UfoSight_player_sighted"]

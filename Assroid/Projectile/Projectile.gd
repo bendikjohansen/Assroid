@@ -2,7 +2,7 @@ extends RigidBody2D
 
 const SPEED = 400
 
-onready var SoundEffect = preload("res://Assroid/Projectile/ProjectileSound.tscn")
+onready var SoundEffect = preload("res://Assroid/SoundEffects/Shoot.tscn")
 
 var direction = Vector2.ZERO
 var velocity = Vector2.ZERO

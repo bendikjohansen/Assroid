@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Shoot.wav-952ca0f3fa9b367bab06701af0f4abee.sample"
+path="res://.import/Explode.wav-cfff3742163b2bf410f17252f521bbfd.sample"
 
 [deps]
 
-source_file="res://Assroid/Projectile/Shoot.wav"
-dest_files=[ "res://.import/Shoot.wav-952ca0f3fa9b367bab06701af0f4abee.sample" ]
+source_file="res://Assroid/SoundEffects/Explode.wav"
+dest_files=[ "res://.import/Explode.wav-cfff3742163b2bf410f17252f521bbfd.sample" ]
 
 [params]
 

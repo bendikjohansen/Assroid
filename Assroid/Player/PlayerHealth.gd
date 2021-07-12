@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var SoundEffect = preload("res://Assroid/SoundEffects/Explode.tscn")
 onready var player = get_parent()
 var health = 3
 
@@ -20,5 +21,8 @@ func lose_health(points):
 	health -= points
 	
 	if health <= 0:
+		var sound_effect = SoundEffect.instance()
+		sound_effect.position = position
+		get_tree().root.add_child(sound_effect)
 		emit_signal("player_died")
 		player.queue_free()

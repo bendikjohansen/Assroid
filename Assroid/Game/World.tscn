@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assroid/Player/PlayerTrace.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assroid/Canon/Canon.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assroid/Spawner/Spawner.gd" type="Script" id=6]
 [ext_resource path="res://Assroid/Player/Player.png" type="Texture" id=7]
 [ext_resource path="res://Assroid/Game/Background.png" type="Texture" id=8]
+[ext_resource path="res://Assroid/Score/Score.gd" type="Script" id=9]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -27,9 +28,6 @@ environment = SubResource( 1 )
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 320, 180 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Player"]
 rotation = 1.5708
@@ -40,7 +38,6 @@ texture = ExtResource( 7 )
 polygon = PoolVector2Array( -8.12686, -8.15005, -8.03976, 8.13522, 7.98425, -0.138046 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 current = true
 smoothing_enabled = true
 
@@ -109,11 +106,24 @@ texture = ExtResource( 8 )
 
 [node name="Entities" type="Node2D" parent="."]
 
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner6" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner3" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner7" method="_on_Timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+margin_left = 12.2547
+margin_top = 13.0419
+margin_right = 161.255
+margin_bottom = 27.0419
+align = 1
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner8" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner5" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner4" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner3" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner4" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner5" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner6" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner7" method="_on_Timer_timeout"]

@@ -11,4 +11,4 @@ func _ready():
 	add_torque(ROTATION)
 	
 	for member in get_tree().get_nodes_in_group("health"):
-		connect("body_entered", member, "_on_Asteroid_body_entered")
+		var _error = connect("body_entered", member, "_on_Asteroid_body_entered")

@@ -9,7 +9,7 @@ onready var initial_position = position - player.position
 onready var Asteroid = preload("res://Assroid/Asteroid/Asteroid.tscn")
 onready var Ufo = preload("res://Assroid/Ufo/Ufo.tscn")
 
-func _process(delta):
+func _process(_delta):
 	position = initial_position + player.position
 
 func _on_Timer_timeout():

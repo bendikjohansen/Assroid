@@ -7,7 +7,7 @@ var is_within_sight = false
 signal player_sighted(player_position, distance_to_player)
 signal player_escaped()
 
-func _process(delta):
+func _process(_delta):
 	if !is_instance_valid(player):
 		return
 	

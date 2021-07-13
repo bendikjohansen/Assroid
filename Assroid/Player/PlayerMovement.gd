@@ -8,7 +8,7 @@ const ACCELERATION = 5
 const FRICTION = 1
 var velocity = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var has_thrust = false
 	if Input.is_action_pressed("thrust"):
 		has_thrust = true

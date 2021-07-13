@@ -9,7 +9,7 @@ signal asteroid_explode(body)
 signal asteroid_exploded_by_player
 
 func _ready():
-	connect("asteroid_exploded_by_player", score, "_on_Asteroid_asteroid_exploded_by_player")
+	var _error = connect("asteroid_exploded_by_player", score, "_on_Asteroid_asteroid_exploded_by_player")
 
 func _on_Projectile_hit(_body, _projectile):
 	pass

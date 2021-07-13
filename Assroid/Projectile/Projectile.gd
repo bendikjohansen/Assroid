@@ -18,7 +18,7 @@ func _ready():
 	get_node("Sprite").set_modulate(projectile_color)
 
 	for member in get_tree().get_nodes_in_group("health"):
-		connect("hit", member, "_on_Projectile_hit")
+		var _error = connect("hit", member, "_on_Projectile_hit")
 	
 	var soundEffect = SoundEffect.instance()
 	soundEffect.set_position(position)

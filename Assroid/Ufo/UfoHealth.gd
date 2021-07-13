@@ -13,12 +13,12 @@ func _ready():
 	for member in get_tree().get_nodes_in_group("projectiles"):
 		member.connect("hit", self, "_on_Projectile_hit")
 		
-	connect("ufo_killed_by_player", score, "_on_Ufo_ufo_killed_by_player")
+	var _error = connect("ufo_killed_by_player", score, "_on_Ufo_ufo_killed_by_player")
 
 func _on_Asteroid_body_entered(_body):
 	pass
 
-func _on_Projectile_body_entered(body):
+func _on_Projectile_body_entered(_body):
 	pass
 
 func _on_Projectile_hit(body, projectile):

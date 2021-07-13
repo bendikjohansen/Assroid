@@ -12,7 +12,7 @@ func _physics_process(_delta):
 	if not is_chasing:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 	
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 
 func _on_UfoSight_player_sighted(player_position, distance_to_player):
 	if distance_to_player < PREFERRED_DISTANCE_TO_PLAYER:

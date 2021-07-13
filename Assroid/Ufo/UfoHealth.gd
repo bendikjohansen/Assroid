@@ -9,7 +9,7 @@ func _ready():
 	for member in get_tree().get_nodes_in_group("projectiles"):
 		member.connect("body_entered", self, "_on_Projectile_body_entered")
 
-func _on_Asteroid_body_entered():
+func _on_Asteroid_body_entered(_body):
 	pass
 
 func _on_Projectile_body_entered(body):

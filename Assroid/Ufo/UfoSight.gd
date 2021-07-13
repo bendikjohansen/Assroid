@@ -8,6 +8,9 @@ signal player_sighted(player_position, distance_to_player)
 signal player_escaped()
 
 func _process(delta):
+	if !is_instance_valid(player):
+		return
+	
 	var distance_to_player = abs(player.position.distance_to(global_position))
 	if distance_to_player < FIELD_OF_VIEW:
 		is_within_sight = true

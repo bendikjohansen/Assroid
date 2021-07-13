@@ -3,6 +3,7 @@ extends Node2D
 const ASTEROID_SPAWN_CHANCE = 0.50
 const UFO_SPAWN_CHANCE = 0.01
 
+onready var entities = get_node("../../Entities")
 onready var player = get_node("../../Player")
 onready var initial_position = position - player.position
 onready var Asteroid = preload("res://Assroid/Asteroid/Asteroid.tscn")
@@ -21,4 +22,4 @@ func _on_Timer_timeout():
 func spawn_entity(Entity):
 	var entity = Entity.instance()
 	entity.position = position
-	get_tree().root.add_child(entity)
+	entities.add_child(entity)

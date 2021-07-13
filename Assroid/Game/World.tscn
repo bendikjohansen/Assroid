@@ -107,11 +107,13 @@ motion_mirroring = Vector2( 640, 360 )
 position = Vector2( 0.493866, 0.367006 )
 texture = ExtResource( 8 )
 
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner7" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner5" method="_on_Timer_timeout"]
+[node name="Entities" type="Node2D" parent="."]
+
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner6" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner3" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner4" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner7" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner8" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner5" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner4" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Spawners/Timer" to="Spawners/Spawner1" method="_on_Timer_timeout"]

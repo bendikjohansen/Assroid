@@ -7,6 +7,4 @@ func _ready():
 	player_health.connect("player_died", self, "_on_Player_player_died")
 	
 func _on_Player_player_died():
-	get_node("WorldEnvironment").queue_free()
-	
-	add_child(WorldScene.instance())
+	get_tree().reload_current_scene()
